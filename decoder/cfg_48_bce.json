@@ -1,0 +1,14 @@
+{
+    "decoder_path" : "./decoder/pretrained_decoder/48bits/hidden_replicate_whit.torchscript.pt",
+    "msg_save_path" : "./decoder/generated_msgs/msg_48",
+    "n_messages" : 500,
+    "msg_id" : 0,
+    "loss_w" : "bce",
+    "loss_i" : "watson-vgg",
+    "n_bits" : 48,
+    "lambda_i" : 0.4,
+    "patch_size" : 64,
+    "lambda_l1" : 0.1,
+    "lambda_ssim" : 0.06,
+    "lambda_tv" : 0.02
+}

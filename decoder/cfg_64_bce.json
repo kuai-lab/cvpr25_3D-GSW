@@ -1,0 +1,14 @@
+{
+    "decoder_path" : "./decoder/pretrained_decoder/64bits/checkpoint_64_whit.pth",
+    "msg_save_path" : "./decoder/generated_msgs/msg_64.txt",
+    "n_messages" : 500,
+    "msg_id" : 0,
+    "loss_w" : "bce",
+    "loss_i" : "watson-vgg",
+    "n_bits" : 64,
+    "lambda_i" : 0.4,
+    "patch_size" : 16,
+    "lambda_l1" : 0.1,
+    "lambda_ssim" : 0.06,
+    "lambda_tv" : 0.02
+}
