@@ -6,13 +6,12 @@ DATA_PATH=./dataset/${DATASET_NAME}/
 MODEL_PATH=./gaussian_models/${DATASET_NAME}/
 
 DATA_TYPES=(lego  materials  mic ship chair  drums  ficus  hotdog) 
-DATA_TYPES=(lego) 
 
 SEEDS=(19701105)
 
 WM_LOSS=bce
 ALPHA=4
-EPOCHS=(1)
+EPOCHS=(8)
 BITS=(32)
 
 for SEED in "${SEEDS[@]}"

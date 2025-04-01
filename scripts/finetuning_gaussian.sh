@@ -9,7 +9,6 @@ POS_GRAD_INIT=0.0000016
 POS_GRAD_FIN=0.00000016
 
 DATA_TYPES=(lego  materials  mic ship chair  drums  ficus  hotdog) 
-DATA_TYPES=(lego) 
 
 SEEDS=(19701105)
 PATCH_SIZE=16
@@ -21,7 +20,7 @@ LAMBDA_WMS=(     0.4)
 LAMBDA_SUBBANDS=(0.3)
 WM_LOSS=bce
 ALPHA=4
-EPOCHS=(1)
+EPOCHS=(8)
 BITS=(32)
 
 for SEED in "${SEEDS[@]}"

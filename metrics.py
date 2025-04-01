@@ -47,7 +47,7 @@ if __name__ == "__main__":
 
     parser = ArgumentParser(description="Training script parameters")
 
-    parser.add_argument("--experiment_path", type=str, default = None)
+    parser.add_argument("--wm_path", type=str, default = None)
     parser.add_argument("--gt_image_path", type=str, default = None)
 
     parser.add_argument("--epoch", default=-1, type=int)
@@ -68,10 +68,10 @@ if __name__ == "__main__":
     totensor = torchvision.transforms.ToTensor()
 
 
-    print(args.experiment_path)
-    wm_img_path = os.path.join(args.experiment_path, 'test', f'ours_{args.epoch}', 'renders/')
+    print(args.wm_path)
+    wm_img_path = os.path.join(args.wm_path, 'test', f'ours_{args.epoch}', 'renders/')
 
-    with open(f'{args.experiment_path}/log_epoch_{args.epoch}.txt', 'w') as log_file:
+    with open(f'{args.wm_path}/log_epoch_{args.epoch}.txt', 'w') as log_file:
         log_file.write(f"Loading Test Cameras.. \n")
         
         avg_test_bitacc = 0.

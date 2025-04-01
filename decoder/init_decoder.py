@@ -40,7 +40,7 @@ class DecoderAttributes:
         self.dec = torch.jit.load(self.cfg['decoder_path']).to(self.device)
         self.decoder_path = self.cfg['decoder_path']
         msg_str, self.msg = generate_and_pick_message(n_bits = self.cfg["n_bits"], seed=seed)
-
+        os.makedirs("./decoder/generated_msgs", exist_ok = True)
         self.cfg['msg_save_path'] = self.cfg['msg_save_path'] + f"_{seed}.txt"
         # write key to the message file
         with open(self.cfg['msg_save_path'], 'w') as kf:
