@@ -72,12 +72,12 @@ def total_variation_loss(image):
 
 def prepare_output_and_logger(args):    
     
-    args.experiment_dir = os.path.join("./output/", args.data_name,args.exp_name)
+    args.exp_name = os.path.join("./output/", args.exp_name)
         
     # Set up output folder
-    print("Output folder: {}".format(args.experiment_dir))
-    os.makedirs(args.experiment_dir, exist_ok = True)
-    with open(os.path.join(args.experiment_dir, "cfg_args"), 'w') as cfg_log_f:
+    print("Output folder: {}".format(args.exp_name))
+    os.makedirs(args.exp_name, exist_ok = True)
+    with open(os.path.join(args.exp_name, "cfg_args"), 'w') as cfg_log_f:
         cfg_log_f.write(str(Namespace(**vars(args))))
 
 
@@ -214,8 +214,8 @@ def training(dataset, opt, pipe, testing_iterations, saving_iterations, saving_e
                                 torch.mean(torch.abs(hl_2 - hl_gt_2)) + torch.mean(torch.abs(hl_1 - hl_gt_1)) + \
                                 torch.mean(torch.abs(hh_2 - hh_gt_2)) +  torch.mean(torch.abs(hh_1 - hh_gt_1))
 
-            loss =  opt.lambda_i * loss_lpips  + \
-                    opt.lambda_dssim * Ll1 + \
+            loss =  opt.lambda_lpips * loss_lpips  + \
+                    opt.lambda_i * Ll1 + \
                     opt.lambda_subband * loss_lhhlhh_mse + \
                     opt.lambda_wm * loss_wm 
             
@@ -306,7 +306,7 @@ if __name__ == "__main__":
     parser.add_argument('--detect_anomaly', action='store_true', default=False)
     parser.add_argument("--test_iterations", nargs="+", type=int, default=[7_000, 30_000])
     parser.add_argument("--save_iterations", nargs="+", type=int, default=[7_000, 30_000])
-    parser.add_argument("--save_epochs", nargs="+", type=int, default=[2,3,4, 5,6, 7,8,9,10, 20, 30])
+    parser.add_argument("--save_epochs", nargs="+", type=int, default=[1,2,3,4, 5,6, 7,8,9,10, 20, 30])
     parser.add_argument("--quiet", action="store_true")
     parser.add_argument("--checkpoint_iterations", nargs="+", type=int, default=[])
     parser.add_argument("--start_checkpoint", type=str, default = None)

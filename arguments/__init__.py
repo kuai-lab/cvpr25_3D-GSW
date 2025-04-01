@@ -57,7 +57,6 @@ class ModelParams(ParamGroup):
         self.add_points = False
         self.train_test_exp = False
         self.data_name = ""
-        self.experiment_dir = ""
         self.exp_name = ""
         self.patch = 1
         self.proportion = 0.1
@@ -88,7 +87,7 @@ class OptimizationParams(ParamGroup):
         self.scaling_lr = 0.005
         self.rotation_lr = 0.001
         self.percent_dense = 0.01
-        self.lambda_dssim = 0.2
+        self.lambda_i = 1.0
         self.densification_interval = 10
         self.opacity_reset_interval = 10
         self.densify_from_iter = 1
@@ -96,14 +95,12 @@ class OptimizationParams(ParamGroup):
         self.densify_grad_threshold = 0.0002
         self.random_background = False
         self.epochs = 10
-        self.lambda_tv = 0.2
         self.mask_lr = 0.0
-        self.lambda_mask = 0.0005
-        self.lambda_i = 0.1
-        self.lambda_wm = 0.2
+        self.lambda_lpips = 0.2
+        self.lambda_wm = 0.4
         self.alpha = 3
         self.decoder_att = ""
-        self.lambda_subband = 0.7
+        self.lambda_subband = 0.3
         super().__init__(parser, "Optimization Parameters")
 
 def get_combined_args(parser : ArgumentParser):

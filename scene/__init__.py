@@ -23,14 +23,15 @@ class Scene:
 
     gaussians : GaussianModel
 
-    def __init__(self, args : ModelParams, gaussians : GaussianModel, load_iteration=None, shuffle=True, resolution_scales=[1.0]):
+    def __init__(self, args : ModelParams, gaussians : GaussianModel, load_iteration=None, shuffle=True, resolution_scales=[1.0], wm=False):
         """b
         :param path: Path to colmap scene main folder.
         """
         self.model_path = args.model_path
-        self.experiment_dir = args.experiment_dir
+        self.exp_name = args.exp_name
         self.loaded_iter = None
         self.gaussians = gaussians
+        self.wm = wm
 
         if load_iteration:
             if load_iteration == -1:
@@ -74,38 +75,36 @@ class Scene:
             print("Loading Training Cameras")
             self.train_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.train_cameras, resolution_scale, args)
             print("Loading Test Cameras")
-            self.test_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.test_cameras, resolution_scale, args)
+            self.test_cameras[resolution_scale] = cameraList_from_camInfos(scene_info.test_cameras, resolution_scale, args) 
 
-        if self.loaded_iter == 30000 :
-            self.gaussians.load_ply(os.path.join(self.model_path,
-                                                           "point_cloud",
-                                                           "iteration_" + str(self.loaded_iter),
-                                                           "point_cloud.ply"))
-        elif self.loaded_iter == 30001 :
-            self.gaussians.load_ply(os.path.join(self.model_path,
-                                                           "point_cloud",
-                                                           "iteration_" + str(self.loaded_iter),
-                                                           "point_cloud.ply"))
-        
-        elif self.loaded_iter != 30000 :
-            self.gaussians.load_ply(os.path.join(self.experiment_dir,
-                                                 args.exp_name,
-                                                           "point_cloud",
-                                                           "epoch_" + str(self.loaded_iter),
-                                                           "point_cloud.ply"))
+        if wm==False:
+            if self.loaded_iter:
+                self.gaussians.load_ply(os.path.join(self.model_path,
+                                                            "point_cloud",
+                                                            "iteration_" + str(self.loaded_iter),
+                                                            "point_cloud.ply"))
+
+            elif self.loaded_iter not in [30000, 30001]:
+                self.gaussians.load_ply(os.path.join(args.exp_name,
+                                                            "point_cloud",
+                                                            "epoch_" + str(self.loaded_iter),
+                                                            "point_cloud.ply"))
+            else:
+                self.gaussians.create_from_pcd(scene_info.point_cloud, self.cameras_extent)
+
         else:
-            self.gaussians.create_from_pcd(scene_info.point_cloud, self.cameras_extent)
+            if self.loaded_iter:
+                self.gaussians.load_ply(os.path.join(args.model_path,
+                                                            "point_cloud",
+                                                            "epoch_" + str(self.loaded_iter),
+                                                            "point_cloud.ply"))
 
     def save(self, iteration):
         point_cloud_path = os.path.join(self.model_path, "point_cloud/iteration_{}".format(iteration))
         self.gaussians.save_ply(os.path.join(point_cloud_path, "point_cloud.ply"))
-
-    def frequency_save(self, iteration):
-        point_cloud_path = os.path.join(self.experiment_dir, "point_cloud/iteration_{}".format(iteration))
-        self.gaussians.save_ply(os.path.join(point_cloud_path, "point_cloud.ply"))
     
     def finetuning_save(self, iteration):
-        point_cloud_path = os.path.join(self.experiment_dir, "point_cloud/epoch_{}".format(iteration))
+        point_cloud_path = os.path.join(self.exp_name, "point_cloud/epoch_{}".format(iteration))
         self.gaussians.save_ply(os.path.join(point_cloud_path, "point_cloud.ply"))
 
     def getTrainCameras(self, scale=1.0):
