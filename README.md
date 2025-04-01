@@ -25,7 +25,7 @@ To prepare the dataset and pre-trained weights for training and evaluation, foll
 
 1. Download the Blender and LLFF dataset from [NeRF Dataset Link](https://drive.google.com/drive/folders/1cK3UDIJqKAAm7zyrxRYVFJ0BRMgrwhh4).
 2. Download the Mip-NeRF 360 dataset from [Mip-NeRF 360 Dataset Link](https://jonbarron.info/mipnerf360/). 
-3. Extract the downloaded dataset and place it in the `./data` directory. Your directory structure should look like this:
+3. Extract the downloaded dataset and place it in the `./dataset` directory. Your directory structure should look like this:
     ```
     cvpr25_3D-GSW/
     ├── dataset/
