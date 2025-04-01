@@ -14,9 +14,9 @@ Youngdong Jang, Hyunje Park, Feng Yang, Heeju Ko, Euijin Choo, Sangpil Kim
 
 This repository is the official implementation associated with the paper "3D-GSW: 3D Gaussian Splatting for Robust Watermarking". 
 
-<a href="https://kuaicv.com/"><img height="90" src="assets/korea_univ_logo.png"> </a> 
-<a href="https://deepmind.google/"><img height="90" src="assets/Google_DeepMind_logo.png"> </a>
-<a href="https://www.ualberta.ca/en/index.html"><img height="100" src="assets/university-of-alberta-vector-logo.png"> </a> 
+<a href="https://kuaicv.com/"><img height="50" src="assets/korea_univ_logo.png"> </a> 
+<a href="https://deepmind.google/"><img height="50" src="assets/Google_DeepMind_logo.png"> </a>
+<a href="https://www.ualberta.ca/en/index.html"><img height="50" src="assets/university-of-alberta-vector-logo.png"> </a> 
 
 **Abstract:** *As 3D Gaussian Splatting (3D-GS) gains significant attention and its commercial usage increases, the need for watermarking technologies to prevent unauthorized use of the 3D-GS models and rendered images has become increasingly important. In this paper, we introduce a robust watermarking method for 3D-GS that secures copyright of both the model and its rendered images. Our proposed method remains robust against distortions in rendered images and model attacks while maintaining high rendering quality. To achieve these objectives, we present Frequency-Guided Densification (FGD), which removes 3D Gaussians based on their contribution to rendering quality, enhancing real-time rendering and the robustness of the message. FGD utilizes Discrete Fourier Transform to split 3D Gaussians in high-frequency areas, improving rendering quality. Furthermore, we employ a gradient mask for 3D Gaussians and design a wavelet-subband loss to enhance rendering quality. Our experiments show that our method embeds the message in the rendered images invisibly and robustly against various attacks, including model distortion. Our method achieves superior performance in both rendering quality and watermark robustness while improving real-time rendering efficiency.*
 
