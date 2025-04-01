@@ -131,6 +131,8 @@ pip install ./submodules/diff-gaussian-rasterization
 pip install ./submodules/simple-knn
 ```
 
+To use DWT, install pytorch wavelet [pytorch_wavelet Link](https://github.com/fbcotter/pytorch_wavelets)
+
 ### Fine-tuning
 
 To fine-tune the model to embed a watermark, simply use
