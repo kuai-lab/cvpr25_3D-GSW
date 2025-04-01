@@ -42,8 +42,8 @@ To prepare the dataset and pre-trained weights for training and evaluation, foll
     └── ...
     ```
 
-4. Download the 3D-GS pre-trained weights from [3D-GS Pretrained Wieghts link (Mip-NeRF 360)](https://github.com/graphdeco-inria/gaussian-splatting?tab=readme-ov-file).
-5. Pre-train the 3D-GS as following as [Original 3D-GS paper link](https://github.com/graphdeco-inria/gaussian-splatting?tab=readme-ov-file).
+4. Download the 3D-GS pre-trained weights from [3D-GS Pretrained Wieghts Link (Mip-NeRF 360)](https://github.com/graphdeco-inria/gaussian-splatting?tab=readme-ov-file).
+5. Pre-train the 3D-GS as following as [Original 3D-GS paper Link](https://github.com/graphdeco-inria/gaussian-splatting?tab=readme-ov-file).
 7. Place the pre-trained weights in the `./gaussian_models` directory. Your directory structure should look like this:
     ```
     cvpr25_3D-GSW/
@@ -84,7 +84,7 @@ To prepare the dataset and pre-trained weights for training and evaluation, foll
     ├── finetuning_gaussian.py
     └── ...
     ```
-9. Download the weights for perceptual loss from [PerceptualSimilarity Github](https://github.com/SteffenCzolbe/PerceptualSimilarity) and place them in the `./decoder/loss/losses` directory. Your directory structure should now include:
+9. Download the weights for perceptual loss from [PerceptualSimilarity Link](https://github.com/SteffenCzolbe/PerceptualSimilarity) and place them in the `./decoder/loss/losses` directory. Your directory structure should now include:
     ```
     cvpr25_3D-GSW/
     ├── decoder/
