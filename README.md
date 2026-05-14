@@ -133,6 +133,11 @@ pip install ./submodules/simple-knn
 
 To use DWT, install pytorch wavelet [pytorch_wavelet Link](https://github.com/fbcotter/pytorch_wavelets)
 
+## **Results and Weights**
+
+We provide results and weights for all scenes presented in our paper.
+- **Download**: [Link](https://kuaicv.synology.me/weights/cvpr2025/3dgsw/3dgsw_weights.zip)
+
 ### Fine-tuning
 
 To fine-tune the model to embed a watermark, simply use
