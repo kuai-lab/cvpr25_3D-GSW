@@ -260,14 +260,12 @@ To evaluate the bit accuracy and rendering quality, simply use
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@misc{jang20253dgsw3dgaussiansplatting,
-      title={3D-GSW: 3D Gaussian Splatting for Robust Watermarking}, 
-      author={Youngdong Jang and Hyunje Park and Feng Yang and Heeju Ko and Euijin Choo and Sangpil Kim},
-      year={2025},
-      eprint={2409.13222},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV},
-      url={https://arxiv.org/abs/2409.13222}, 
+    <pre><code>@inproceedings{jang20253d,
+  title={3d-gsw: 3d gaussian splatting for robust watermarking},
+  author={Jang, Youngdong and Park, Hyunje and Yang, Feng and Ko, Heeju and Choo, Euijin and Kim, Sangpil},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={5938--5948},
+  year={2025}
 }</code></pre>
   </div>
 </section>
