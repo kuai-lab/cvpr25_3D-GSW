@@ -136,6 +136,15 @@ To use DWT, install pytorch wavelet [pytorch_wavelet Link](https://github.com/fb
 We provide results and weights for all scenes presented in our paper.
 - **Download**: [Link](https://kuaicv.synology.me/weights/cvpr2025/3dgsw/3dgsw_weights.zip)
 
+## Docker image loading and running
+
+We provide docker image and manual to reproduce our paper's result.
+
+- [docker image link](https://kuaicv.synology.me/weights/cvpr2025/3dgsw/3dgsw_s42-m19701105.tar) sm_70–90 (V100, A100, A6000, L40, RTX 6000 Ada, H100, etc.)
+- [docker image link (sm120)](https://kuaicv.synology.me/weights/cvpr2025/3dgsw/3dgsw_s42-m19701105-sm120.tar) sm_70–120 (all GPUs above, plus B200, RTX PRO 6000 Blackwell, RTX 50 series) 
+
+[Docker instructions](Docker_RUN.md)
+
 ### Fine-tuning
 
 To fine-tune the model to embed a watermark, simply use
