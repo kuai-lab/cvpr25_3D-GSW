@@ -134,7 +134,7 @@ To use DWT, install pytorch wavelet [pytorch_wavelet Link](https://github.com/fb
 ## **Results and Weights**
 
 We provide results and weights for all scenes presented in our paper.
-- **Download**: [Link](https://kuaicv.synology.me/weights/cvpr2025/3dgsw/3dgs_weights.zip)
+- **Download**: [Link](https://kuaicv.synology.me/weights/cvpr2025/3dgsw/3dgsw_weights.zip)
 
 ### Fine-tuning
 
